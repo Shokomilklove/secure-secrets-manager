@@ -1,0 +1,11 @@
+{
+  "student_inputs": {
+    "project_summary": "Claude fetched the specification and implemented the full application across all five phases in a first session, generating every file in the project structure defined by the spec. Then I guided it to generate additional files, and complete documentation. Features implemented: User registration with PBKDF2-SHA256 password hashing; JWT login with configurable expiry; Fernet AES-128-CBC+HMAC encryption at rest with auto key generation; per-file secret storage so listing never deserialises encrypted values; full secrets CRUD (create, list, retrieve, update, delete) with _public() field allowlist; owner-based access control returning 404 to avoid existence leaking; one-time expiring share tokens with HTTP 410 on re-use or expiry; append-only JSON-line audit log that never records secret values; rate limiting (10/min on auth, 100/hr global); environment-based configuration with three config classes; 17-test pytest suite with tmp_path isolation; README, Postman collection with auto-save scripts, .gitignore, env.example.",
+    "ai_interaction_summary": "I used Claude Code, which generates the project structure directly in the file system. My prompt instructed Claude to fetch the spec, summarize it, list all requirements, state assumptions, follow the exact folder structure, and wait for confirmation before coding — with constraints of Flask, best practices, unit tests, and Python 3.10 compatibility. Claude generated all models, routes, utils, app factory, and tests in one session. I then guided follow-up tasks: README with installation steps and usage examples, .gitignore (and manually added .claude to it after checking git status), and a Postman collection for all 9 endpoints. I denied a request to scan the broader repository as it was not relevant to this project."
+  },
+  "scores": {
+    "python_coding_hex": "0x1F40",
+    "vibe_coding_hex": "0x1D4C",
+    "ai_collaboration_hex": "0x1B58"
+  }
+}
